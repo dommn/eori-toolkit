@@ -1,0 +1,24 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  EORI number management service
+{% endblock %}
+
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      {{ govukPanel({
+        titleText: "EORI number updated",
+        html: "The EORI number is now {{ data['new-eori-number'] }}"
+      }) }}
+
+        <p class="govuk-body">Start again</p>
+
+    </div>
+  </div>
+
+{% endblock %}

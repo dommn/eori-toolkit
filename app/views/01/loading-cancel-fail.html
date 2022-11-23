@@ -1,0 +1,33 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  EORI number management service
+{% endblock %}
+
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        <script>
+        setTimeout(
+        function() {
+          window.location.replace("services-couldnt-update");
+        }, 10000);
+        </script>
+
+        <h1 class="govuk-heading-xl">
+          Cancelling enrolments
+        </h1>
+
+        <p class="govuk-body">It may take a couple of minutes to cancel the enrolments.</p>
+
+        <p class="govuk-body">Do not close or refresh the page.</p>
+
+        <img src="https://user-images.githubusercontent.com/32877315/57133956-621e7600-6d9c-11e9-8170-1673b6307ca4.gif" alt="loading spinner">
+    </div>
+  </div>
+
+{% endblock %}

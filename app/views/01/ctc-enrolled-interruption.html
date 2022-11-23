@@ -1,0 +1,38 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  EORI number management service
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="loading" method="post">
+
+        <h1 class="govuk-heading-xl">
+          Customer Compliance Group (CCG) confirmation required
+        </h1>
+
+          <p class="govuk-body">The EORI number is enrolled with CTC.</p>
+
+          <p class="govuk-body">Before continuing, you must confirm with CCG that NCTS and GMS have been updated.</p>
+
+          <p class="govuk-body">CCG work with the Customs Support Group (CSG) to complete compliance checks.</p>
+
+        <h3 class="govuk-heading-m">Do you confirm that NCTS and GMS have been updated by CCG?</h3>
+
+{{ govukButton({
+  text: "Confirm"
+}) }}
+
+    </div>
+  </div>
+
+{% endblock %}

@@ -1,0 +1,35 @@
+a
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  EORI number management service
+{% endblock %}
+
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="loading" method="post">
+
+        <h1 class="govuk-heading-xl">
+          There was a problem cancelling 2 services
+        </h1>
+
+        <p class="govuk-body">The services that weren't cancelled are:</p>
+
+        <ul class="govuk-list govuk-list--bullet">
+          <li>GB Safety and Security (GB S&S)</li>
+          <li>Goods Vehicle Movement Service (GVMS)</li>
+        </ul>
+
+        <p class="govuk-body">You must manually cancel these services.</p>
+
+        <p class="govuk-body"><a href="update-or-cancel" class="govuk-link">Update another EORI number or cancel enrolments</a>.</p>
+
+
+    </div>
+  </div>
+
+{% endblock %}

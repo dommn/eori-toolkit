@@ -1,0 +1,49 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  EORI number management service
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="cancel-enrolments" method="post">
+
+        <h1 class="govuk-heading-xl">
+          Cancel an enrolment
+        </h1>
+
+
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="current-eori-number">
+            Current EORI number
+          </label>
+          <input class="govuk-input govuk-input--width-20" id="current-eori-number" name="current-eori-number" type="text">
+        </div>
+
+        {{ govukDateInput({
+          id: "date-of-establishment",
+          namePrefix: "date-of-establishment",
+          fieldset: {
+            legend: {
+              text: "Date of establishment"
+            }
+          }
+        }) }}
+
+
+{{ govukButton({
+  text: "Continue"
+}) }}
+
+    </div>
+  </div>
+
+{% endblock %}

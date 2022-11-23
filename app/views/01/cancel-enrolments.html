@@ -1,0 +1,45 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  EORI number management service
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="enter-eori" method="post">
+
+        <h1 class="govuk-heading-xl">
+          Cancel enrolments for {{ data['current-eori-number'] }}
+        </h1>
+
+        <p class="govuk-body">These enrolments will be cancelled for this EORI number:</p>
+
+        <ul class="govuk-list govuk-list--bullet">
+          <li>Common Transit Convention (CTC)</li>
+          <li>GB Safety and Security (GB S&S)</li>
+          <li>Goods Vehicle Movement Service (GVMS)</li>
+        </ul>
+
+        <p class="govuk-body">These enrolments can't be cancelled:</p>
+
+        <ul class="govuk-list govuk-list--bullet">
+          <li>Route 1</li>
+        </ul>
+
+          {{ govukButton({
+            text: "Cancel enrolments"
+          }) }}
+
+
+    </div>
+  </div>
+
+{% endblock %}

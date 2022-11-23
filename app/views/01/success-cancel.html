@@ -1,0 +1,56 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  EORI number management service
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="update-or-cancel" method="post">
+
+
+{% set html %}
+  <h3 class="govuk-notification-banner__heading">
+    The enrolments were cancelled for {{ data['current-eori-number'] }}.
+  </h3>
+{% endset %}
+
+{{ govukNotificationBanner({
+  html: html,
+  type: 'success'
+}) }}
+
+
+{{ govukRadios({
+  idPrefix: "update-or-cancel",
+  name: "update-or-cancel",
+  fieldset: {
+    legend: {
+      text: "Do you want to update an EORI number or cancel an enrolment?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--l"
+    }
+  },
+  items: [
+    {
+      value: "Update an EORI number",
+      text: "Update an EORI number"
+    },
+    {
+      value: "Cancel an enrolment",
+      text: "Cancel an enrolment"
+    }
+  ]
+}) }}
+
+<button class="govuk-button" data-module="govuk-button">Continue</button>
+
+
+    </div>
+  </div>
+
+{% endblock %}
