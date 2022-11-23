@@ -1,44 +1,155 @@
-
 {% extends "layout.html" %}
 
-{% block pageTitle %}
-  Home – GOV.UK Prototype Kit
+{% block header %}
+  {# Set serviceName in config.js. #}
+  {{ govukHeader({
+    homepageUrl: "https://www.gov.uk/",
+    serviceName: "EORI number management service",
+    serviceUrl: "index",
+    navigation: [
+    {
+      href: "",
+      text: ""
+    }
+    ]
+  }) }}
+
+  <div class="homepage-top">
+  <div class="homepage-top-content">
+    <h1 class="govuk-heading-xl">
+      {{serviceName}}
+      <span>Prototypes</span>
+    </h1>
+  </div>
+  </div>
+{% endblock %}
+
+{% block beforeContent %}
+
 {% endblock %}
 
 {% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
 
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
-      <h1 class="govuk-heading-xl">
-        Prototype your service using GOV.UK Prototype Kit
-        <span class="govuk-caption-xl">{{releaseVersion}}</span>
-      </h1>{{releaseVersion | log }}
-      <p>
-        This kit lets you rapidly create HTML prototypes of GOV.UK services.
-      </p>
 
-      <p>
-        It contains all you need to prototype anything from simple static pages to complex, data-driven transactions.
-      </p>
+    {# Start of most recent box #}
+    <div class="most-recent">
 
-      <h2 class="govuk-heading-m">About this page</h2>
+      {# Start of prototype write up #}
+      <div class="prototype-write-up">
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-one-third">
+            <dl>
+              <dt class="govuk-heading-s">Date of release</dt>
+              <dd class="govuk-body">TBC</dd>
+            </dl>
+          </div>
 
-      <p>We recommend you add links to your prototype to this page, rather than delete it.
-        You'll find this page in the kit at '/app/views/index.html'.</p>
+          <div class="govuk-grid-column-one-third">
+            <dl>
+              <dt class="govuk-heading-s">Feature</dt>
+              <dd class="govuk-body">EORI toolkit high fidelity v1.0</dd>
+            </dl>
+          </div>
 
-      <p>You can change the service name by editing the file '/app/config.js'.</p>
+          <div class="govuk-grid-column-one-third">
+            <dl>
+              <dt class="govuk-heading-s">Related stories</dt>
+              <dd class="govuk-body">TBC</dd>
+            </dl>
+          </div>
+        </div>
 
-      <h2 class="govuk-heading-m">Examples and documentation</h2>
+        <h3 class="govuk-heading-s">Changes</h3>
+        <p>TBC</p>
 
-      <ul class="govuk-list govuk-list--bullet">
-        <li>
-          <a href="/docs/tutorials-and-examples">Tutorials and templates</a>
-        </li>
-        <li>
-          <a href="https://design-system.service.gov.uk">GOV.UK Design System</a>
-        </li>
-      </ul>
+        <h3 class="govuk-heading-s">Hypothesis</h3>
+
+        <p>TBC</p>
+
+
+        <h3 class="govuk-heading-s">Research notes</h3>
+        <p>Due to be added</p>
+
+
+        <h3 class="govuk-heading-s">EORI routing</h3>
+        <p>GB205672212000 - update happy path</p>
+        <p>GB612599232321 - services couldn't update</p>
+        <p>GB205672212000 - change enrolments happy path</p>
+        <p>GB612599232321 - services couldn't update</p>
+
+        {{ govukButton({
+          text: "View prototype",
+          href: "01/update-or-cancel"
+        }) }}
+
+      </div>
+      {# End of prototype write up #}
+
     </div>
+    {# End of most recent box #}
+
+  <h2 class="govuk-heading-l">Previous versions</h2>
+
+          {# Start of hidden panel #}
+          <details class="govuk-details all-versions">
+            <summary class="govuk-details__summary">
+              <span class="govuk-details__summary-text">
+                Show all versions
+              </span>
+            </summary>
+
+            <div class="govuk-details__text">
+
+              {# Start of prototype write up #}
+              <div class="prototype-write-up">
+                <div class="govuk-grid-row">
+                  <div class="govuk-grid-column-one-third">
+                    <dl>
+                      <dt class="govuk-heading-s">Date of release</dt>
+                      <dd class="govuk-body">TBC</dd>
+                    </dl>
+                  </div>
+
+                  <div class="govuk-grid-column-one-third">
+                    <dl>
+                      <dt class="govuk-heading-s">Feature</dt>
+                      <dd class="govuk-body">Low fidelity prototype</dd>
+                    </dl>
+                  </div>
+
+                  <div class="govuk-grid-column-one-third">
+                    <dl>
+                      <dt class="govuk-heading-s">Related stories</dt>
+                      <dd class="govuk-body">TBC</dd>
+                    </dl>
+                  </div>
+                </div>
+
+                <h3 class="govuk-heading-s">Changes</h3>
+                <p>TBC</p>
+
+                <h3 class="govuk-heading-s">Hypothesis</h3>
+
+                <p>TBC</p>
+
+
+                <h3 class="govuk-heading-s">Research notes</h3>
+                <p>Due to be added</p>
+
+                {{ govukButton({
+                  text: "View prototype",
+                  href: "https://projects.invisionapp.com/share/BK131LWBVUR7#/screens"
+                }) }}
+
+              </div>
+              {# End of prototype write up #}
+
+        </details>
+        {# End of hidden panel #}
+
   </div>
+</div>
 
 {% endblock %}
