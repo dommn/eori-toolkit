@@ -14,19 +14,25 @@ a
       <form class="form" action="loading" method="post">
 
         <h1 class="govuk-heading-l">
-          There was a problem updating 2 services
+          There was a problem replacing the EORI number
         </h1>
 
-        <p class="govuk-body">The services that weren't updated are:</p>
+        <p class="govuk-body">The new EORI number {{ data['update-current-eori-number'] }} has not been subscribed to:</p>
 
         <ul class="govuk-list govuk-list--bullet">
           <li>GB Safety and Security (GB S&S)</li>
           <li>Goods Vehicle Movement Service (GVMS)</li>
         </ul>
 
-        <p class="govuk-body">You must manually update these services.</p>
+        <p class="govuk-body">You must manually update these services by [include content to explain next steps].</p>
 
-        <p class="govuk-body"><a href="update-or-cancel" class="govuk-link">Update another EORI number or cancel enrolments</a>.</p>
+        <p class="govuk-body">The new EORI number has been successfully subscribed to:</p>
+
+        <ul class="govuk-list govuk-list--bullet">
+          <li>Advanced Tariff Rulings (ATAR)</li>
+        </ul>
+
+        <p class="govuk-body"><a href="update-or-cancel" class="govuk-link">Replace another EORI number or cancel subscriptions to HMRC services</a>.</p>
 
 
     </div>

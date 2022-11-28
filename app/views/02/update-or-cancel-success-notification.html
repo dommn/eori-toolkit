@@ -15,8 +15,9 @@
 
 {% set html %}
   <h3 class="govuk-notification-banner__heading">
-    The EORI number was updated to {{ data['new-eori-number'] }}.
+    EORI number {{ data['update-current-eori-number'] }} has been replaced with {{ data['new-eori-number'] }}.
   </h3>
+  <p class="govuk-body">The company will get an email confirming that their EORI number has been replaced.</p>
 {% endset %}
 
 {{ govukNotificationBanner({
