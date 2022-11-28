@@ -1,0 +1,62 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  EORI number management service
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="loading-2" method="post">
+
+        <h1 class="govuk-heading-l">
+          Replacing EORI number {{ data['update-current-eori-number'] }}
+        </h1>
+
+        <p class="govuk-body">EORI number {{ data['update-current-eori-number'] }} is currently subscribed to:</p>
+
+        <ul class="govuk-list govuk-list--bullet">
+          <li>Advanced Tariff Rulings (ATAR)</li>
+          <li>GB Safety and Security (GB S&S)</li>
+          <li>Goods Vehicle Movement Service (GVMS)</li>
+        </ul>
+
+        <div class="govuk-form-group">
+  <fieldset class="govuk-fieldset">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+      <h3 class="govuk-fieldset__heading">
+        Are you sure you want to replace the current EORI number with {{ data['new-eori-number'] }}?
+      </h3>
+    </legend>
+    <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="replace-eori" name="replace-eori" type="radio" value="yes">
+        <label class="govuk-label govuk-radios__label" for="replace-eori">
+          Yes
+        </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="replace-eori-2" name="replace-eori" type="radio" value="no">
+        <label class="govuk-label govuk-radios__label" for="replac-eori-2">
+          No
+        </label>
+      </div>
+
+  </fieldset>
+</div>
+
+{{ govukButton({
+  text: "Confirm"
+}) }}
+
+    </div>
+  </div>
+
+{% endblock %}
