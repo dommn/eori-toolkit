@@ -1,0 +1,69 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  EORI number management service
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="cancel-subscription" method="post">
+
+        <h1 class="govuk-heading-l">
+          Cancel subscriptions for {{ data['current-eori-number'] }}
+        </h1>
+
+        <p class="govuk-body">You can cancel {{ data['current-eori-number'] }}’s subscriptions for:</p>
+
+        <ul class="govuk-list govuk-list--bullet">
+          <li>Common Transit Convention (CTC)</li>
+          <li>GB Safety and Security (GB S&S)</li>
+          <li>Goods Vehicle Movement Service (GVMS)</li>
+        </ul>
+
+        <p class="govuk-body">You will not be able to cancel {{ data['current-eori-number'] }}’s subscriptions for:</p>
+
+        <ul class="govuk-list govuk-list--bullet">
+          <li>Route 1</li>
+        </ul>
+
+        <div class="govuk-form-group">
+  <fieldset class="govuk-fieldset">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+      <h3 class="govuk-fieldset__heading">
+        Are you sure you want to cancel {{ data['current-eori-number'] }}’s subscriptions?
+      </h3>
+    </legend>
+    <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="cancel-subscription" name="cancel-subscription" type="radio" value="yes">
+        <label class="govuk-label govuk-radios__label" for="cancel-subscription">
+          Yes
+        </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="cancel-subscription-2" name="cancel-subscription" type="radio" value="no">
+        <label class="govuk-label govuk-radios__label" for="cancel-subscription-2">
+          No
+        </label>
+      </div>
+
+  </fieldset>
+</div>
+
+          {{ govukButton({
+            text: "Confirm"
+          }) }}
+
+
+    </div>
+  </div>
+
+{% endblock %}
