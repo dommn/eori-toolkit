@@ -70,7 +70,7 @@ router.post('/replace-eori', function (req, res) {
   const replaceEori = req.session.data['replace-eori']
 
   if (replaceEori === 'yes') {
-    res.redirect('ctc-enrolled-interruption')
+    res.redirect('update-or-cancel-success-notification')
   } else if (replaceEori === 'no') {
     res.redirect('update-an-eori-number')
   }
