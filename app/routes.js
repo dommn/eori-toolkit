@@ -9,5 +9,6 @@ const router = express.Router()
 router.use('/01', require('./views/01/_routes'));
 router.use('/02', require('./views/02/_routes'));
 router.use('/03', require('./views/03/_routes'));
+router.use('/04', require('./views/04/_routes'));
 
 module.exports = router
