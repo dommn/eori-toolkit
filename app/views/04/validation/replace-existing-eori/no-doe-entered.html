@@ -1,0 +1,94 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  EORI number management service
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="success-or-fail" method="post">
+
+        {{ govukErrorSummary({
+          titleText: "There is a problem",
+          errorList: [
+            {
+              text: "Enter the date the company was established",
+              href: "#date-of-establishment"
+            }
+          ]
+        }) }}
+
+        <h1 class="govuk-heading-l">
+          Replace an existing EORI number
+        </h1>
+
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-label--m" for="update-current-eori-number">
+            What is the company’s current EORI number?
+          </label>
+          <div id="account-number-hint" class="govuk-hint">
+            The first two letters are GB, followed by 12 digits. For example, GB123456123456.
+          </div>
+          <input class="govuk-input govuk-input--width-20" id="update-current-eori-number" name="update-current-eori-number" type="text">
+        </div>
+
+
+        {{ govukDateInput({
+          id: "date-of-establishment",
+          namePrefix: "date-of-establishment",
+          fieldset: {
+            legend: {
+              text: "What date was the company established?",
+              isPageHeading: false,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          errorMessage: {
+            text: "Enter the date the company was established"
+          },
+          items: [
+            {
+              classes: "govuk-input--width-2 govuk-input--error",
+              name: "day",
+              value: ""
+            },
+            {
+              classes: "govuk-input--width-2 govuk-input--error",
+              name: "month",
+              value: ""
+            },
+            {
+              classes: "govuk-input--width-4 govuk-input--error",
+              name: "year",
+              value: ""
+            }
+          ]
+        }) }}
+
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-label--m" for="new-eori-number">
+            What is the company’s new EORI number?
+          </label>
+          <div id="account-number-hint" class="govuk-hint">
+            The first two letters are GB, followed by 12 digits. For example, GB123456123456.
+          </div>
+          <input class="govuk-input govuk-input--width-20" id="new-eori-number" name="new-eori-number" type="text">
+        </div>
+
+
+{{ govukButton({
+  text: "Continue"
+}) }}
+
+    </div>
+  </div>
+
+{% endblock %}
