@@ -36,22 +36,6 @@ router.post('/success-or-fail', function (req, res) {
   }
 })
 
-
-router.post('/cancel-current-enrolments', function (req, res) {
-
-  var blue = req.session.data['cancel-enrolments']
-
-  if (blue.includes("ctc")) {
-    res.redirect('ctc-enrolled-interruption')
-  }
-  if (blue.includes("atar")) {
-    res.redirect('success-cancel')
-  }
-  else {
-    res.redirect('services-couldnt-update')
-  }
-})
-
 router.post('/enter-eori', function (req, res) {
 
   let successFail = req.session.data['current-eori-number']
