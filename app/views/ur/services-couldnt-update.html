@@ -14,10 +14,10 @@ a
       <form class="form" action="loading" method="post">
 
         <h1 class="govuk-heading-l">
-          There was a problem replacing the EORI number
+          There was a problem cancelling subscriptions for {{ data['update-current-eori-number'] }}
         </h1>
 
-        <p class="govuk-body">The new EORI number GB023002000002 has not been subscribed to:</p>
+        <p class="govuk-body">The subscription for {{ data['update-current-eori-number'] }} has not been cancelled for:</p>
 
         <ul class="govuk-list govuk-list--bullet">
           <li>GB Safety and Security (GB S&S)</li>
@@ -26,7 +26,7 @@ a
 
         <p class="govuk-body">You need to <a href="#">create a live service ticket on ServiceNow</a> to fix the problem.</p>
 
-        <p class="govuk-body">The new EORI number has been successfully subscribed to:</p>
+        <p class="govuk-body">Subscriptions have been successfully cancelled for:</p>
 
         <ul class="govuk-list govuk-list--bullet">
           <li>Advanced Tariff Rulings (ATAR)</li>
