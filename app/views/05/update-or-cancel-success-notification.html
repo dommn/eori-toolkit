@@ -1,0 +1,56 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  EORI number management service
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="update-or-cancel" method="post">
+
+
+{% set html %}
+  <h3 class="govuk-notification-banner__heading">
+    EORI number {{ data['update-current-eori-number'] }} has been replaced with {{ data['new-eori-number'] }}.
+  </h3>
+  <p class="govuk-body">You should email the EORI team confirming that their EORI number has been replaced.</p>
+{% endset %}
+
+{{ govukNotificationBanner({
+  html: html,
+  type: 'success'
+}) }}
+
+{{ govukRadios({
+  idPrefix: "update-or-cancel",
+  name: "update-or-cancel",
+  fieldset: {
+    legend: {
+      text: "Do you want to replace an existing EORI number or cancel subscriptions to HMRC services?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--l"
+    }
+  },
+  items: [
+    {
+      value: "Update an EORI number",
+      text: "Replace an existing EORI number"
+    },
+    {
+      value: "Cancel an enrolment",
+      text: "Cancel subscriptions to HMRC services"
+    }
+  ]
+}) }}
+
+<button class="govuk-button" data-module="govuk-button">Continue</button>
+
+
+    </div>
+  </div>
+
+{% endblock %}

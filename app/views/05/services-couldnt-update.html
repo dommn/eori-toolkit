@@ -1,0 +1,41 @@
+a
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  EORI number management service
+{% endblock %}
+
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="loading" method="post">
+
+        <h1 class="govuk-heading-l">
+          There was a problem cancelling subscriptions for {{ data['update-current-eori-number'] }}
+        </h1>
+
+        <p class="govuk-body">The subscription for {{ data['update-current-eori-number'] }} has not been cancelled for:</p>
+
+        <ul class="govuk-list govuk-list--bullet">
+          <li>GB Safety and Security (GB S&S)</li>
+          <li>Goods Vehicle Movement Service (GVMS)</li>
+        </ul>
+
+        <p class="govuk-body">You need to <a href="#">create a live service ticket on ServiceNow</a> to fix the problem.</p>
+
+        <p class="govuk-body">Subscriptions have been successfully cancelled for:</p>
+
+        <ul class="govuk-list govuk-list--bullet">
+          <li>Advanced Tariff Rulings (ATAR)</li>
+        </ul>
+
+        <p class="govuk-body"><a href="update-or-cancel" class="govuk-link">Replace another EORI number or cancel subscriptions to HMRC services</a>.</p>
+
+
+    </div>
+  </div>
+
+{% endblock %}
