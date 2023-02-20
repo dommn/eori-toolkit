@@ -16,6 +16,21 @@
 
       <form class="form" action="replace-eori" method="post">
 
+        <div class="govuk-error-summary" data-module="govuk-error-summary">
+          <div role="alert">
+            <h2 class="govuk-error-summary__title">
+              There is a problem
+            </h2>
+            <div class="govuk-error-summary__body">
+              <ul class="govuk-list govuk-error-summary__list">
+                <li>
+                  <a href="#passport-issued-day">Select if you want to replace the current EORI number with {{ data['new-eori-number'] }}</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
         <h1 class="govuk-heading-l">
           Replacing EORI number {{ data['update-current-eori-number'] }}
         </h1>
@@ -28,19 +43,22 @@
           <li>Goods Vehicle Movement Service (GVMS)</li>
         </ul>
 
-        <p class="govuk-body">You will not be able to replace the EORI number for:</p>
+        <p class="govuk-body">You will not be able to replace {{ data['current-eori-number'] }}’s EORI number for:</p>
 
         <ul class="govuk-list govuk-list--bullet">
           <li>Common Transit Convention (CTC)</li>
         </ul>
 
-        <div class="govuk-form-group">
+        <div class="govuk-form-group govuk-form-group--error">
   <fieldset class="govuk-fieldset">
     <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
       <h3 class="govuk-fieldset__heading">
         Are you sure you want to replace the current EORI number with {{ data['new-eori-number'] }}?
       </h3>
     </legend>
+    <p id="where-do-you-live-error" class="govuk-error-message">
+      <span class="govuk-visually-hidden">Error:</span> Select if you want to replace the current EORI number with {{ data['new-eori-number'] }}
+    </p>
     <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
       <div class="govuk-radios__item">
         <input class="govuk-radios__input" id="replace-eori" name="replace-eori" type="radio" value="yes">

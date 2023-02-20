@@ -16,6 +16,21 @@
 
       <form class="form" action="cancel-subscription" method="post">
 
+        <div class="govuk-error-summary" data-module="govuk-error-summary">
+          <div role="alert">
+            <h2 class="govuk-error-summary__title">
+              There is a problem
+            </h2>
+            <div class="govuk-error-summary__body">
+              <ul class="govuk-list govuk-error-summary__list">
+                <li>
+                  <a href="#passport-issued-day">Select if you want to cancel {{ data['current-eori-number'] }}’s subscriptions</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
         <h1 class="govuk-heading-l">
           Cancel subscriptions for {{ data['current-eori-number'] }}
         </h1>
@@ -27,20 +42,23 @@
           <li>Goods Vehicle Movement Service (GVMS)</li>
         </ul>
 
-        <p class="govuk-body">You will not be able to cancel the subscriptions for:</p>
+        <p class="govuk-body">You will not be able to cancel {{ data['current-eori-number'] }}’s subscriptions for:</p>
 
         <ul class="govuk-list govuk-list--bullet">
           <li>Common Transit Convention (CTC)</li>
           <li>Route 1</li>
         </ul>
 
-        <div class="govuk-form-group">
+        <div class="govuk-form-group govuk-form-group--error">
   <fieldset class="govuk-fieldset">
     <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
       <h3 class="govuk-fieldset__heading">
         Are you sure you want to cancel {{ data['current-eori-number'] }}’s subscriptions?
       </h3>
     </legend>
+    <p id="where-do-you-live-error" class="govuk-error-message">
+      <span class="govuk-visually-hidden">Error:</span> Select if you want to cancel {{ data['current-eori-number'] }}’s subscriptions
+    </p>
     <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
       <div class="govuk-radios__item">
         <input class="govuk-radios__input" id="cancel-subscription" name="cancel-subscription" type="radio" value="yes">

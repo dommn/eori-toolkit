@@ -14,43 +14,43 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form class="form" action="replace-eori" method="post">
+      <form class="form" action="cancel-subscription-2" method="post">
 
         <h1 class="govuk-heading-l">
-          Replacing EORI number {{ data['update-current-eori-number'] }}
+          Cancel subscriptions for {{ data['current-eori-number'] }}
         </h1>
 
-        <p class="govuk-body">EORI number {{ data['update-current-eori-number'] }} is currently subscribed to:</p>
+        <p class="govuk-body">You can cancel {{ data['current-eori-number'] }}’s subscriptions for:</p>
 
         <ul class="govuk-list govuk-list--bullet">
-          <li>Advanced Tariff Rulings (ATAR)</li>
           <li>GB Safety and Security (GB S&S)</li>
           <li>Goods Vehicle Movement Service (GVMS)</li>
         </ul>
 
-        <p class="govuk-body">You will not be able to replace the EORI number for:</p>
+        <p class="govuk-body">You will not be able to cancel {{ data['current-eori-number'] }}’s subscriptions for:</p>
 
         <ul class="govuk-list govuk-list--bullet">
           <li>Common Transit Convention (CTC)</li>
+          <li>Route 1</li>
         </ul>
 
         <div class="govuk-form-group">
   <fieldset class="govuk-fieldset">
     <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
       <h3 class="govuk-fieldset__heading">
-        Are you sure you want to replace the current EORI number with {{ data['new-eori-number'] }}?
+        Are you sure you want to cancel {{ data['current-eori-number'] }}’s subscriptions?
       </h3>
     </legend>
     <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
       <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="replace-eori" name="replace-eori" type="radio" value="yes">
-        <label class="govuk-label govuk-radios__label" for="replace-eori">
+        <input class="govuk-radios__input" id="cancel-subscription" name="cancel-subscription" type="radio" value="yes">
+        <label class="govuk-label govuk-radios__label" for="cancel-subscription">
           Yes
         </label>
       </div>
       <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="replace-eori-2" name="replace-eori" type="radio" value="no">
-        <label class="govuk-label govuk-radios__label" for="replac-eori-2">
+        <input class="govuk-radios__input" id="cancel-subscription-2" name="cancel-subscription" type="radio" value="no">
+        <label class="govuk-label govuk-radios__label" for="cancel-subscription-2">
           No
         </label>
       </div>
@@ -58,9 +58,10 @@
   </fieldset>
 </div>
 
-{{ govukButton({
-  text: "Confirm"
-}) }}
+          {{ govukButton({
+            text: "Confirm"
+          }) }}
+
 
     </div>
   </div>

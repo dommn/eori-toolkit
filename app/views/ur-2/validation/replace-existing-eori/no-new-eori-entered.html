@@ -16,13 +16,23 @@
 
       <form class="form" action="success-or-fail" method="post">
 
+        {{ govukErrorSummary({
+          titleText: "There is a problem",
+          errorList: [
+            {
+              text: "Enter the company's new EORI number",
+              href: "#new-eori-number"
+            }
+          ]
+        }) }}
+
         <h1 class="govuk-heading-l">
           Replace an existing EORI number
         </h1>
 
         <div class="govuk-form-group">
           <label class="govuk-label govuk-label--m" for="update-current-eori-number">
-            What is the traders’s current EORI number?
+            What is the company’s current EORI number?
           </label>
           <div id="account-number-hint" class="govuk-hint">
             The first two letters are GB, followed by 12 digits. For example, GB123456123456.
@@ -30,25 +40,30 @@
           <input class="govuk-input govuk-input--width-20" id="update-current-eori-number" name="update-current-eori-number" type="text">
         </div>
 
-        {{ govukDateInput({
-          id: "date-of-establishment",
-          namePrefix: "date-of-establishment",
-          fieldset: {
-            legend: {
-              text: "What date was the company established?",
-              classes: "govuk-fieldset__legend--m"
-            }
-          }
-        }) }}
 
-        <div class="govuk-form-group">
+{{ govukDateInput({
+  id: "date-of-establishment",
+  namePrefix: "date-of-establishment",
+  fieldset: {
+    legend: {
+      text: "What date was the company established?",
+      isPageHeading: false,
+      classes: "govuk-fieldset__legend--m"
+    }
+  ]
+}) }}
+
+        <div class="govuk-form-group govuk-form-group--error">
           <label class="govuk-label govuk-label--m" for="new-eori-number">
-            What is the trader’s new EORI number?
+            What is the company’s new EORI number?
           </label>
           <div id="account-number-hint" class="govuk-hint">
             The first two letters are GB, followed by 12 digits. For example, GB123456123456.
           </div>
-          <input class="govuk-input govuk-input--width-20" id="new-eori-number" name="new-eori-number" type="text">
+          <p id="event-name-error" class="govuk-error-message">
+            <span class="govuk-visually-hidden">Error:</span> Enter the company's new EORI number
+          </p>
+          <input class="govuk-input govuk-input--width-20 govuk-input--error" id="new-eori-number" name="new-eori-number" type="text">
         </div>
 
 

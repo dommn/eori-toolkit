@@ -10,24 +10,17 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form class="form" action="update-or-cancel-2" method="post">
+      <form class="form" action="update-or-cancel" method="post">
 
-
-{% set html %}
-  <h3 class="govuk-notification-banner__heading">
-    Subscriptions cancelled for {{ data['current-eori-number'] }}.
-  </h3>
-  <p class="govuk-body">You should email the trader confirming that EORI number {{ data['current-eori-number'] }} subscriptions have been cancelled for:</p>
-  <ul class="govuk-list govuk-list--bullet">
-    <li>GB Safety and Security (GB S&S)</li>
-    <li>Goods Vehicle Movement Service (GVMS)</li>
-  </ul>
-{% endset %}
-
-{{ govukNotificationBanner({
-  html: html,
-  type: 'success'
-}) }}
+        {{ govukErrorSummary({
+          titleText: "There is a problem",
+          errorList: [
+            {
+              text: "Select if you want to replace an existing EORI number or cancel subscriptions to HMRC services",
+              href: "#update-or-cancel"
+            }
+          ]
+        }) }}
 
 
 {{ govukRadios({
@@ -49,7 +42,10 @@
       value: "Cancel an enrolment",
       text: "Cancel subscriptions to HMRC services"
     }
-  ]
+  ],
+      errorMessage: {
+      text: "Select if you want to replace an existing EORI number or cancel subscriptions to HMRC services"
+  }
 }) }}
 
 <button class="govuk-button" data-module="govuk-button">Continue</button>

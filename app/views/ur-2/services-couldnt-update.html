@@ -1,0 +1,78 @@
+a
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  EORI number management service
+{% endblock %}
+
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="loading" method="post">
+
+        <h1 class="govuk-heading-l">
+          There was a problem cancelling subscriptions for {{ data['current-eori-number'] }}
+        </h1>
+
+        <p class="govuk-body">Subscriptions have been successfully cancelled for:</p>
+
+        <ul class="govuk-list govuk-list--bullet">
+          <li>Advanced Tariff Rulings (ATAR)</li>
+        </ul>
+
+        <p class="govuk-body">The subscriptions for {{ data['current-eori-number'] }} that have not been cancelled:</p>
+
+        <ul class="govuk-list govuk-list--bullet">
+          <li>GB Safety and Security (GB S&S)</li>
+          <li>Goods Vehicle Movement Service (GVMS)</li>
+        </ul>
+
+        <h2 class="govuk-heading-m">Help with your ServiceNow ticket</h2>
+
+        <p class="govuk-body">You need to <a href="#">create a live service ticket on ServiceNow (opens in new tab)</a> to fix the problem.</p>
+
+        <p class="govuk-body">You can copy and paste the following information into your ServiceNow ticket.</p>
+
+        <p class="govuk-body">Short description:</p>
+
+        <p class="govuk-body">Unable to cancel EORI subscriptions</p>
+
+        <p class="govuk-body">Description:</p>
+
+        <p class="govuk-body">There has been a problem trying to update an EORI number for the following subscriptions:</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>GB Safety and Security (GB S&S)</li>
+          <li>Goods Vehicle Movement Service (GVMS)</li>
+        </ul>
+        <p class="govuk-body">The tool I use to cancel the subscriptions tells me that there is a problem with the enrollment systems. I am not able to complete this task until they are fixed.</p>
+
+        <h2 class="govuk-heading-m">Email template</h2>
+
+        <p class="govuk-body">Thank you for submitting your change of circumstances enquiry.</p>
+        <p class="govuk-body">We have looked into the problem and have cancelled the following subscriptions for your EORI number.</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>Advanced Tariff Ratings (ATAR)</li>
+        </ul>
+        <p class="govuk-body">We have not been able to cancel the following subscriptions for your EORI number.</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>GB Safety and Security (GB S&S)</li>
+          <li>Goods Vehicle Movement Service (GVMS)</li>
+        </ul>
+        <p class="govuk-body">We are investigating this issue and will contact you when there is an update.</p>
+        <p class="govuk-body">Regards,</p>
+
+        <hr class="govuk-section-break govuk-section-break--m govuk-section-break">
+
+
+        {{ govukButton({
+          text: "Start again",
+          href: "update-or-cancel"
+        }) }}
+
+    </div>
+  </div>
+
+{% endblock %}
