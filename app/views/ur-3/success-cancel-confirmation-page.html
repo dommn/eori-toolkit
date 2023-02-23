@@ -1,0 +1,36 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  EORI number management service
+{% endblock %}
+
+{% block content %}
+
+        <div class="govuk-width-container">
+          <main class="govuk-main-wrapper govuk-main-wrapper--l" id="main-content" role="main">
+            <div class="govuk-grid-row">
+              <div class="govuk-grid-column-two-thirds">
+                <div class="govuk-panel govuk-panel--confirmation">
+                  <h1 class="govuk-panel__title">
+                    Subscriptions cancelled for GB123123123123
+                  </h1>
+                </div>
+                <h2 class="govuk-heading-m">What happens next</h2>
+                <p class="govuk-body">You should email the trader confirming that EORI number GB123123123123 subscriptions have been cancelled for:</p>
+                <ul class="govuk-list govuk-list--bullet">
+                  <li>GB Safety and Security (GB S&S)</li>
+                  <li>Goods Vehicle Movement Service (GVMS)</li>
+                </ul>
+                <p class="govuk-body">You can get help with your email in the guidance.</p>
+
+                {{ govukButton({
+                  text: "Start again",
+                  href: "update-or-cancel-2"
+                }) }}
+              </div>
+            </div>
+          </main>
+        </div>
+
+{% endblock %}

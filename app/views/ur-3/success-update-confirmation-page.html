@@ -1,0 +1,34 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  EORI number management service
+{% endblock %}
+
+{% block content %}
+
+        <div class="govuk-width-container">
+          <main class="govuk-main-wrapper govuk-main-wrapper--l" id="main-content" role="main">
+            <div class="govuk-grid-row">
+              <div class="govuk-grid-column-two-thirds">
+                <div class="govuk-panel govuk-panel--confirmation">
+                  <h1 class="govuk-panel__title">
+                    EORI number {{ data['update-current-eori-number'] }} has been replaced with {{ data['new-eori-number'] }}.
+                  </h1>
+                </div>
+                <h2 class="govuk-heading-m">What happens next</h2>
+                <p class="govuk-body">You should email the trader confirming that their EORI number has been replaced.</p>
+
+                <p class="govuk-body">You can get help with your email in the guidance.</p>
+                <hr class="govuk-section-break govuk-section-break--m govuk-section-break">
+
+                {{ govukButton({
+                  text: "Start again",
+                  href: "update-or-cancel"
+                }) }}
+              </div>
+            </div>
+          </main>
+        </div>
+
+{% endblock %}

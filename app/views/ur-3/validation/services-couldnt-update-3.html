@@ -1,0 +1,58 @@
+a
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  EORI number management service
+{% endblock %}
+
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="loading" method="post">
+
+        <h1 class="govuk-heading-l">
+          There was a problem cancelling subscriptions for GB123456123456
+        </h1>
+
+        <p class="govuk-body">The subscription for GB123456123456 has not been cancelled for:</p>
+
+        <ul class="govuk-list govuk-list--bullet">
+          <li>GB Safety and Security (GB S&S)</li>
+          <li>Goods Vehicle Movement Service (GVMS)</li>
+        </ul>
+
+        <p class="govuk-body">You need to <a href="#">create a live service ticket on ServiceNow (opens in new tab)</a> to fix the problem.</p>
+
+        <details class="govuk-details" data-module="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              Help with your live service ticket
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+            <p class="govuk-body">You can copy and paste the following information into your ServiceNow ticket.</p>
+
+            <p class="govuk-body">Short description:</p>
+
+            <p class="govuk-body">Unable to cancel EORI subscriptions</p>
+
+            <p class="govuk-body">Description:</p>
+
+            <p class="govuk-body">There has been a problem trying to update an EORI number for the following subscriptions:</p>
+            <ul class="govuk-list govuk-list--bullet">
+              <li>GB Safety and Security (GB S&S)</li>
+              <li>Goods Vehicle Movement Service (GVMS)</li>
+            </ul>
+            <p class="govuk-body">The tool I use to cancel the subscriptions tells me that there is a problem with the enrollment systems. I am not able to complete this task until they are fixed.</p>          </div>
+        </details>
+
+        <p class="govuk-body"><a href="update-or-cancel" class="govuk-link">Replace another EORI number or cancel subscriptions to HMRC services</a>.</p>
+
+
+    </div>
+  </div>
+
+{% endblock %}

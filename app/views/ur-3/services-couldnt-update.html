@@ -1,0 +1,53 @@
+a
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  EORI number management service
+{% endblock %}
+
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="loading" method="post">
+
+        <h1 class="govuk-heading-l">
+          There was a problem cancelling subscriptions for {{ data['current-eori-number'] }}
+        </h1>
+
+        <p class="govuk-body">Subscriptions have been successfully cancelled for:</p>
+
+        <ul class="govuk-list govuk-list--bullet">
+          <li>Advanced Tariff Rulings (ATAR)</li>
+        </ul>
+
+        <p class="govuk-body">The subscriptions for {{ data['current-eori-number'] }} that have not been cancelled:</p>
+
+        <ul class="govuk-list govuk-list--bullet">
+          <li>GB Safety and Security (GB S&S)</li>
+          <li>Goods Vehicle Movement Service (GVMS)</li>
+        </ul>
+
+        <p class="govuk-body">You should email the trader confirming that which subscriptions have been cancelled and which have not been cancelled.</p>
+        <p class="govuk-body">You can get help with your email in the guidance.</p>
+
+        <h2 class="govuk-heading-m">Help with your ServiceNow ticket</h2>
+
+        <p class="govuk-body">You need to <a href="#">create a live service ticket on ServiceNow (opens in new tab)</a> to fix the problem.</p>
+
+      <p class="govuk-body">You can get help with your ServiceNow ticket in the guidance.</p>
+
+        <hr class="govuk-section-break govuk-section-break--m govuk-section-break">
+
+
+        {{ govukButton({
+          text: "Start again",
+          href: "update-or-cancel"
+        }) }}
+
+    </div>
+  </div>
+
+{% endblock %}

@@ -1,0 +1,57 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  EORI number management service
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="update-or-cancel" method="post">
+
+        {{ govukErrorSummary({
+          titleText: "There is a problem",
+          errorList: [
+            {
+              text: "Select if you want to replace an existing EORI number or cancel subscriptions to HMRC services",
+              href: "#update-or-cancel"
+            }
+          ]
+        }) }}
+
+
+{{ govukRadios({
+  idPrefix: "update-or-cancel",
+  name: "update-or-cancel",
+  fieldset: {
+    legend: {
+      text: "Do you want to replace an existing EORI number or cancel subscriptions to HMRC services?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--l"
+    }
+  },
+  items: [
+    {
+      value: "Update an EORI number",
+      text: "Replace an existing EORI number"
+    },
+    {
+      value: "Cancel an enrolment",
+      text: "Cancel subscriptions to HMRC services"
+    }
+  ],
+      errorMessage: {
+      text: "Select if you want to replace an existing EORI number or cancel subscriptions to HMRC services"
+  }
+}) }}
+
+<button class="govuk-button" data-module="govuk-button">Continue</button>
+
+
+    </div>
+  </div>
+
+{% endblock %}
