@@ -35,13 +35,17 @@
         </ul>
 
         <div class="govuk-button-group">
-          <button class="govuk-button" data-module="govuk-button">
-            Confirm changes
-          </button>
-          <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
-            Cancel
-          </button>
-        </div>
+        {{ govukButton({
+          text: "Confirm changes",
+          href: "success-update-confirmation-page"
+        }) }}
+
+        {{ govukButton({
+          text: "Cancel",
+          classes: "govuk-button--secondary",
+          href: "update-an-eori-number"
+        }) }}
+      </div>
 
 
     </div>
