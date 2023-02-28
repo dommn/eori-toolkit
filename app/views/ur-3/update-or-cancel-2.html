@@ -13,23 +13,6 @@
       <form class="form" action="update-or-cancel-2" method="post">
 
 
-{% set html %}
-  <h3 class="govuk-notification-banner__heading">
-    Subscriptions cancelled for {{ data['current-eori-number'] }}.
-  </h3>
-  <p class="govuk-body">You should email the company confirming that EORI number {{ data['current-eori-number'] }} subscriptions have been cancelled for:</p>
-  <ul class="govuk-list govuk-list--bullet">
-    <li>GB Safety and Security (GB S&S)</li>
-    <li>Goods Vehicle Movement Service (GVMS)</li>
-  </ul>
-{% endset %}
-
-{{ govukNotificationBanner({
-  html: html,
-  type: 'success'
-}) }}
-
-
 {{ govukRadios({
   idPrefix: "update-or-cancel",
   name: "update-or-cancel",
