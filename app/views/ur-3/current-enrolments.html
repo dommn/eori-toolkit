@@ -17,10 +17,10 @@
       <form class="form" action="replace-eori" method="post">
 
         <h1 class="govuk-heading-l">
-          Replacing EORI number {{ data['update-current-eori-number'] }}
+          Replacing existing EORI number {{ data['update-current-eori-number'] }} with {{ data['new-eori-number'] }}
         </h1>
 
-        <p class="govuk-body">EORI number {{ data['update-current-eori-number'] }} is currently subscribed to:</p>
+        <p class="govuk-body">Existing EORI number {{ data['update-current-eori-number'] }} will be replaced with {{ data['new-eori-number'] }} for the following subscriptions:</p>
 
         <ul class="govuk-list govuk-list--bullet">
           <li>Advanced Tariff Rulings (ATAR)</li>
@@ -28,7 +28,7 @@
           <li>Goods Vehicle Movement Service (GVMS)</li>
         </ul>
 
-        <p class="govuk-body">You will not be able to replace {{ data['update-current-eori-number'] }}’s EORI number for:</p>
+        <p class="govuk-body">You will not be able to replace existing EORI number {{ data['update-current-eori-number'] }} for:</p>
 
         <ul class="govuk-list govuk-list--bullet">
           <li>Common Transit Convention (CTC)</li>

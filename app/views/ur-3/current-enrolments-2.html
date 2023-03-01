@@ -17,10 +17,10 @@
       <form class="form" action="cancel-subscription-2" method="post">
 
         <h1 class="govuk-heading-l">
-          Replacing EORI number {{ data['update-current-eori-number'] }}
+          Replacing existing EORI number {{ data['update-current-eori-number'] }} with {{ data['new-eori-number'] }}
         </h1>
 
-        <p class="govuk-body">EORI number {{ data['update-current-eori-number'] }} is currently subscribed to:</p>
+        <p class="govuk-body">Existing EORI number {{ data['update-current-eori-number'] }} will be replaced with {{ data['new-eori-number'] }} for the following subscriptions:</p>
 
         <ul class="govuk-list govuk-list--bullet">
           <li>Advanced Tariff Rulings (ATAR)</li>
