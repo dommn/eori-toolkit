@@ -16,13 +16,20 @@
                     Subscriptions cancelled for {{ data['current-eori-number'] }}
                   </h1>
                 </div>
-                <p class="govuk-body">EORI number subscriptions have been successfully cancelled for:</p>
+                <p class="govuk-body">EORI number {{ data['current-eori-number'] }} subscriptions have been successfully cancelled for:</p>
                 <ul class="govuk-list govuk-list--bullet">
                   <li>GB Safety and Security (GB S&S)</li>
                   <li>Goods Vehicle Movement Service (GVMS)</li>
                 </ul>
+
+                <p class="govuk-body">EORI number {{ data['current-eori-number'] }} remains subscribed to and cannot be cancelled for:</p>
+                <ul class="govuk-list govuk-list--bullet">
+                  <li>Common Transit Convention (CTC)</li>
+                  <li>Route 1</li>
+                </ul>
+
                 <h2 class="govuk-heading-m">What happens next</h2>
-                <p class="govuk-body">You will need to email the trader confirming the EORI number subscriptions have been successfully cancelled.</p>
+                <p class="govuk-body">You will need to email the trader confirming which subscriptions have been successfully cancelled.</p>
 
                 <p class="govuk-body">You can get help with your email in the guidance.</p>
 

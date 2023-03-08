@@ -1,0 +1,52 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  EORI number management service
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="cancel-subscription-2" method="post">
+
+        <h1 class="govuk-heading-l">
+          Review changes before cancelling subscriptions for EORI number {{ data['current-eori-number'] }}
+        </h1>
+
+        <p class="govuk-body">You can cancel {{ data['current-eori-number'] }}’s subscriptions for:</p>
+
+        <ul class="govuk-list govuk-list--bullet">
+          <li>GB Safety and Security (GB S&S)</li>
+          <li>Goods Vehicle Movement Service (GVMS)</li>
+        </ul>
+
+        <p class="govuk-body">You will not be able to cancel {{ data['current-eori-number'] }}’s subscriptions for:</p>
+
+        <ul class="govuk-list govuk-list--bullet">
+          <li>Common Transit Convention (CTC)</li>
+          <li>Route 1</li>
+        </ul>
+
+        <div class="govuk-button-group">
+        {{ govukButton({
+          text: "Confirm changes",
+          href: "services-couldnt-update"
+        }) }}
+
+        {{ govukButton({
+          text: "Cancel changes and start again",
+          classes: "govuk-button--secondary",
+          href: "enter-an-eori-number-2"
+        }) }}
+      </div>
+    </div>
+  </div>
+
+{% endblock %}

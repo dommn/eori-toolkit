@@ -1,0 +1,67 @@
+a
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  EORI number management service
+{% endblock %}
+
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="loading" method="post">
+
+        <h1 class="govuk-heading-l">
+          There was a problem cancelling subscriptions for {{ data['current-eori-number'] }}
+        </h1>
+
+        <p class="govuk-body">Subscriptions have been successfully cancelled for:</p>
+
+        <ul class="govuk-list govuk-list--bullet">
+          <li>Advanced Tariff Rulings (ATAR)</li>
+        </ul>
+
+        <p class="govuk-body">The subscriptions for {{ data['current-eori-number'] }} that have not been cancelled:</p>
+
+        <ul class="govuk-list govuk-list--bullet">
+          <li>GB Safety and Security (GB S&S)</li>
+          <li>Goods Vehicle Movement Service (GVMS)</li>
+        </ul>
+
+        <details class="govuk-details" data-module="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              Help with your live service ticket
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+            <p class="govuk-body">You can copy and paste the following information into your ServiceNow ticket.</p>
+
+            <p class="govuk-body">Short description:</p>
+
+            <p class="govuk-body">Unable to cancel EORI subscriptions</p>
+
+            <p class="govuk-body">Description:</p>
+
+            <p class="govuk-body">There has been a problem trying to update an EORI number for the following subscriptions:</p>
+            <ul class="govuk-list govuk-list--bullet">
+              <li>GB Safety and Security (GB S&S)</li>
+              <li>Goods Vehicle Movement Service (GVMS)</li>
+            </ul>
+            <p class="govuk-body">The tool I use to cancel the subscriptions tells me that there is a problem with the enrollment systems. I am not able to complete this task until they are fixed.</p>          </div>
+        </details>
+
+        <hr class="govuk-section-break govuk-section-break--m govuk-section-break">
+
+
+        {{ govukButton({
+          text: "Start again",
+          href: "update-or-cancel"
+        }) }}
+
+    </div>
+  </div>
+
+{% endblock %}

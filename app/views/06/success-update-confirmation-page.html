@@ -13,22 +13,33 @@
               <div class="govuk-grid-column-two-thirds">
                 <div class="govuk-panel govuk-panel--confirmation">
                   <h1 class="govuk-panel__title">
-                    Subscriptions cancelled for {{ data['current-eori-number'] }}
+                    EORI number {{ data['update-current-eori-number'] }} has been replaced with {{ data['new-eori-number'] }}
                   </h1>
                 </div>
-                <p class="govuk-body">EORI number subscriptions have been successfully cancelled for:</p>
+
+                <p class="govuk-body">New EORI number {{ data['new-eori-number'] }} is now subscribed to:</p>
+
                 <ul class="govuk-list govuk-list--bullet">
+                  <li>Advanced Tariff Rulings (ATaR)</li>
                   <li>GB Safety and Security (GB S&S)</li>
                   <li>Goods Vehicle Movement Service (GVMS)</li>
                 </ul>
+
+                <p class="govuk-body">EORI number {{ data['update-current-eori-number'] }} remains subscribed to and cannot be replaced for:</p>
+
+                <ul class="govuk-list govuk-list--bullet">
+                  <li>Common Transit Convention (CTC)</li>
+                </ul>
+
                 <h2 class="govuk-heading-m">What happens next</h2>
-                <p class="govuk-body">You will need to email the trader confirming the EORI number subscriptions have been successfully cancelled.</p>
+                <p class="govuk-body">You will need to email the trader confirming which subscriptions their EORI number has been replaced for.</p>
 
                 <p class="govuk-body">You can get help with your email in the guidance.</p>
+                <hr class="govuk-section-break govuk-section-break--m govuk-section-break">
 
                 {{ govukButton({
                   text: "Start again",
-                  href: "update-or-cancel-2"
+                  href: "update-or-cancel"
                 }) }}
               </div>
             </div>
